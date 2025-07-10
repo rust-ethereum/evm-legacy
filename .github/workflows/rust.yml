@@ -23,7 +23,10 @@ jobs:
     - name: Rustfmt
       run: cargo fmt --all -- --check
     - name: Clippy
-      run: cargo clippy --all
+      run: |
+        cargo clippy --all -- -D warnings
+        cargo clippy --all --all-features -- -D warnings
+        cargo clippy --all --no-default-features -- -D warnings
   build:
     runs-on: ubuntu-latest
     steps:
