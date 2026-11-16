@@ -1,12 +1,15 @@
 [package]
-name = "evm"
+name = "evm-legacy"
 version = "0.43.4"
 license = "Apache-2.0"
 authors = ["Wei Tang <hi@that.world>", "Parity Technologies <admin@parity.io>"]
-description = "Ethereum Virtual Machine"
-repository = "https://github.com/rust-ethereum/evm"
+description = "Ethereum Virtual Machine, the 0.x line"
+repository = "https://github.com/rust-ethereum/evm-legacy"
 keywords = ["no_std", "ethereum"]
 edition = "2018"
+
+[lib]
+name = "evm"
 
 [dependencies]
 auto_impl = "1.0"
