@@ -1,0 +1,4 @@
+# Without a lock file, prefer dependency versions that support the
+# toolchain of rust-toolchain.toml.
+[resolver]
+incompatible-rust-versions = "fallback"
