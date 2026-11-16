@@ -3,12 +3,10 @@ name: Rust
 on:
   push:
     branches:
-      - master
-      - v0.x
+      - main
   pull_request:
     branches:
-      - master
-      - v0.x
+      - main
 
 env:
   CARGO_TERM_COLOR: always
@@ -19,7 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Install taplo
-      run: cargo install taplo-cli
+      run: cargo install taplo-cli --locked
     - name: Rustfmt
       run: cargo fmt --all -- --check
     - name: TOML fmt

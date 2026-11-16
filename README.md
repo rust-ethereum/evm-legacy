@@ -1,11 +1,28 @@
-# SputnikVM: Rust Ethereum Virtual Machine Implementation
+# evm-legacy: the 0.x line of SputnikVM, the Rust Ethereum Virtual Machine
 
-[![Build Status](https://github.com/rust-blockchain/evm/workflows/Rust/badge.svg)](https://github.com/rust-blockchain/evm/actions?query=workflow%3ARust)
+[![Build Status](https://github.com/rust-ethereum/evm-legacy/actions/workflows/rust.yml/badge.svg)](https://github.com/rust-ethereum/evm-legacy/actions/workflows/rust.yml)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](./LICENSE)
+
+This repository is the 0.x line of SputnikVM. It was the `v0.x` branch of [rust-ethereum/evm](https://github.com/rust-ethereum/evm), and it keeps that branch's code and history. The 0.x line's fixes and releases happen here.
+
+New projects should use the 1.x line instead: the crate [`evm`](https://crates.io/crates/evm), from [rust-ethereum/evm](https://github.com/rust-ethereum/evm).
+
+## Moving from `evm` 0.x
+
+Releases up to 0.43.4 were published as the crate `evm`. From 0.44.0 on, the main crate is published as `evm-legacy`. Its library is still named `evm`, so code keeps its `use evm::...` lines, and only the dependency changes:
+
+```toml
+[dependencies]
+evm-legacy = "0.44"
+```
+
+The crates `evm-core`, `evm-gasometer` and `evm-runtime` keep their names, and their releases also come from this repository.
+
+## Crates
 
 | Name          | Description                                                     | Crates.io                                                                                                 | Documentation                                                                              |
 |---------------|:---------------------------------------------------------------:|:---------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------:|
-| evm           | Main library that re-exports most things.                        | [![crates.io](https://img.shields.io/crates/v/evm.svg)](https://crates.io/crates/evm)                     | [![Documentation](https://docs.rs/evm/badge.svg)](https://docs.rs/evm)                     |
+| evm-legacy    | Main library that re-exports most things, imported as `evm`.    | [![crates.io](https://img.shields.io/crates/v/evm-legacy.svg)](https://crates.io/crates/evm-legacy)       | [![Documentation](https://docs.rs/evm-legacy/badge.svg)](https://docs.rs/evm-legacy)       |
 | evm-core      | Core library defining the basic execution rules.                | [![crates.io](https://img.shields.io/crates/v/evm-core.svg)](https://crates.io/crates/evm-core)           | [![Documentation](https://docs.rs/evm-core/badge.svg)](https://docs.rs/evm-core)           |
 | evm-gasometer | Integration of Ethereum gas rules.                              | [![crates.io](https://img.shields.io/crates/v/evm-gasometer.svg)](https://crates.io/crates/evm-gasometer) | [![Documentation](https://docs.rs/evm-gasometer/badge.svg)](https://docs.rs/evm-gasometer) |
 | evm-runtime   | Runtime defining interface for block, transaction, and storage. | [![crates.io](https://img.shields.io/crates/v/evm-runtime.svg)](https://crates.io/crates/evm-runtime)     | [![Documentation](https://docs.rs/evm-runtime/badge.svg)](https://docs.rs/evm-runtime)     |
@@ -37,7 +54,8 @@ before are not supported.
 
 ## Documentation
 
-* [Latest release documentation](https://docs.rs/evm)
+* [Latest release documentation](https://docs.rs/evm-legacy)
+* [Documentation of the releases up to 0.43.4, as `evm`](https://docs.rs/evm/0.43.4)
 
 ## Build from sources
 
@@ -50,8 +68,8 @@ To start working with SputnikVM you'll
 need to install [rustup](https://www.rustup.rs/), then you can do:
 
 ```bash
-$ git clone git@github.com:rust-blockchain/evm.git
-$ cd evm
+$ git clone https://github.com/rust-ethereum/evm-legacy.git
+$ cd evm-legacy
 $ cargo build --release --all
 ```
 
