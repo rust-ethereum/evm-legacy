@@ -31,7 +31,7 @@ fn handle_data(sequence: &[u8]) {
 	let res = vm.run();
 	#[cfg(not(fuzzing))]
 	{
-		println!("Result: {:?}", res);
+		println!("Result: {res:?}");
 	}
 }
 
@@ -62,7 +62,7 @@ fn main() {
 			false => args[1..].to_vec(),
 		};
 		for argument in all_files {
-			println!("Now doing file {:?}", argument);
+			println!("Now doing file {argument:?}");
 			let mut buffer: Vec<u8> = Vec::new();
 			let mut f = File::open(argument).unwrap();
 			f.read_to_end(&mut buffer).unwrap();
