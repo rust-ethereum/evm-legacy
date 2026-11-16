@@ -17,7 +17,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Install taplo
-      run: cargo install taplo-cli
+      run: cargo install taplo-cli --locked
     - name: Rustfmt
       run: cargo fmt --all -- --check
     - name: TOML fmt
