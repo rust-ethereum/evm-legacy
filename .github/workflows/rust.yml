@@ -37,6 +37,8 @@ jobs:
       run: cargo build --features tracing --verbose
     - name: Run tests
       run: cargo test --verbose
+    - name: Build benches
+      run: cargo build --benches --verbose
   # FIXME: Due to the evm-tests repository used by the jsontests job being archived, the tests cannot be run, 
   #        so this jsontests job has been temporarily removed. The jsontests job will be improved later, 
   #        see issue #182
