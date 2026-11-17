@@ -27,7 +27,7 @@ evm-gasometer = { version = "0.43", path = "gasometer", default-features = false
 evm-runtime = { version = "0.43", path = "runtime", default-features = false }
 
 [dev-dependencies]
-criterion = "0.4"
+criterion = "0.7"
 hex = "0.4"
 
 [[bench]]
