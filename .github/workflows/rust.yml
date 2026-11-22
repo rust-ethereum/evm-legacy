@@ -5,10 +5,12 @@ on:
     branches:
       - master
       - v0.x
+      - v0.43.x
   pull_request:
     branches:
       - master
       - v0.x
+      - v0.43.x
 
 env:
   CARGO_TERM_COLOR: always
@@ -17,7 +19,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v5
     - name: Rustfmt
       run: cargo fmt --all -- --check
     - name: Clippy
@@ -25,7 +27,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v5
     - name: Build
       run: cargo build --verbose
     - name: Build for feature (tracing)
@@ -38,7 +40,7 @@ jobs:
   # jsontests:
   #   runs-on: ubuntu-latest
   #   steps:
-  #   - uses: actions/checkout@v2
+  #   - uses: actions/checkout@v5
   #     with:
   #       repository: "rust-blockchain/evm-tests"
   #       submodules: recursive
