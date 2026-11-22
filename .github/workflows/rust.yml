@@ -39,6 +39,26 @@ jobs:
       run: cargo test --verbose
     - name: Build benches
       run: cargo build --benches --verbose
+  build-rust-1-95:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v5
+    - name: Install Rust 1.95.0
+      run: rustup toolchain install 1.95.0 --profile minimal
+    - name: Build the released crates
+      run: cargo +1.95.0 build --locked -p evm-legacy -p evm-core -p evm-gasometer -p evm-runtime
+    - name: Build the released crates with all features
+      run: |
+        cargo +1.95.0 build --locked --all-features --manifest-path Cargo.toml
+        cargo +1.95.0 build --locked --all-features --manifest-path core/Cargo.toml
+        cargo +1.95.0 build --locked --all-features --manifest-path gasometer/Cargo.toml
+        cargo +1.95.0 build --locked --all-features --manifest-path runtime/Cargo.toml
+    - name: Build the released crates without default features
+      run: |
+        cargo +1.95.0 build --locked --no-default-features --manifest-path Cargo.toml
+        cargo +1.95.0 build --locked --no-default-features --manifest-path core/Cargo.toml
+        cargo +1.95.0 build --locked --no-default-features --manifest-path gasometer/Cargo.toml
+        cargo +1.95.0 build --locked --no-default-features --manifest-path runtime/Cargo.toml
   # FIXME: Due to the evm-tests repository used by the jsontests job being archived, the tests cannot be run, 
   #        so this jsontests job has been temporarily removed. The jsontests job will be improved later, 
   #        see issue #182
