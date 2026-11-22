@@ -9,4 +9,3 @@
 target
 **/result
 tests.bin
-Cargo.lock
