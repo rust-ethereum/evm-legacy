@@ -33,9 +33,9 @@ serde = { version = "1.0", default-features = false, features = [
   "derive",
 ], optional = true }
 
-evm-core = { version = "0.43", path = "core", default-features = false }
-evm-gasometer = { version = "0.43", path = "gasometer", default-features = false }
-evm-runtime = { version = "0.43", path = "runtime", default-features = false }
+evm-core = { version = "=0.43.0", path = "core", default-features = false }
+evm-gasometer = { version = "=0.43.0", path = "gasometer", default-features = false }
+evm-runtime = { version = "=0.43.0", path = "runtime", default-features = false }
 
 [dev-dependencies]
 criterion = "0.7"
