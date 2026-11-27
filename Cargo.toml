@@ -1,6 +1,6 @@
 [package]
 name = "evm"
-version = "0.43.4"
+version = "0.43.5"
 license = "Apache-2.0"
 authors = ["Wei Tang <hi@that.world>", "Parity Technologies <admin@parity.io>"]
 description = "Ethereum Virtual Machine"
@@ -22,12 +22,12 @@ scale-codec = { package = "parity-scale-codec", version = "3.7.5", default-featu
 scale-info = { version = "2.3", default-features = false, features = ["derive"], optional = true }
 serde = { version = "1.0", default-features = false, features = ["derive"], optional = true }
 
-evm-core = { version = "0.43", path = "core", default-features = false }
+evm-core = { version = "0.43.1", path = "core", default-features = false }
 evm-gasometer = { version = "0.43", path = "gasometer", default-features = false }
-evm-runtime = { version = "0.43", path = "runtime", default-features = false }
+evm-runtime = { version = "0.43.1", path = "runtime", default-features = false }
 
 [dev-dependencies]
-criterion = "0.4"
+criterion = "0.7"
 hex = "0.4"
 
 [[bench]]
