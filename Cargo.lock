@@ -439,7 +439,7 @@ dependencies = [
 
 [[package]]
 name = "evm-core"
-version = "0.43.0"
+version = "0.44.0"
 dependencies = [
  "hex",
  "log",
@@ -459,7 +459,7 @@ dependencies = [
 
 [[package]]
 name = "evm-gasometer"
-version = "0.43.0"
+version = "0.44.0"
 dependencies = [
  "environmental",
  "evm-core",
@@ -470,7 +470,7 @@ dependencies = [
 
 [[package]]
 name = "evm-legacy"
-version = "0.43.4"
+version = "0.44.0"
 dependencies = [
  "auto_impl",
  "criterion",
@@ -491,7 +491,7 @@ dependencies = [
 
 [[package]]
 name = "evm-runtime"
-version = "0.43.0"
+version = "0.44.0"
 dependencies = [
  "auto_impl",
  "environmental",
